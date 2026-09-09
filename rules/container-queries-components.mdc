@@ -1,0 +1,53 @@
+# Container Queries Components
+
+## Overview
+Tailwind CSS v4 supports `@container` for component-level responsive design.
+
+## Setup
+
+```css
+@container card (min-width: 24rem) {
+  .card-title {
+    font-size: var(--text-lg);
+  }
+}
+```
+
+## Named Containers
+
+```css
+@theme {
+  --container-card: 24rem;
+}
+
+.card {
+  container-type: inline-size;
+  container-name: card;
+}
+```
+
+## Utility Variants
+
+Use `@sm:/@md:/@lg:` syntax scoped to container.
+
+```html
+<div class="card">
+  <h2 class="[container-card]@sm:text-lg">Title</h2>
+  <p class="[container-card]@md:grid-cols-2">Content</p>
+</div>
+```
+
+## Patterns
+
+- Card adapts to parent width, not viewport
+- Navigation switches layout at container size
+- Grid components reflow based on available space
+- Avoid nesting containers unnecessarily
+
+## Best Practices
+
+- Define container name for clarity
+- Set `container-type: inline-size` on parent
+- Combine with `min()` and `clamp()` for fluidity
+- Test with narrow and wide containers
+- Keep breakpoint names semantic

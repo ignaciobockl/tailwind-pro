@@ -1,0 +1,59 @@
+# CVA + tailwind-merge Patterns
+
+## Overview
+Combine class-variance-authority with tailwind-merge for safe class composition.
+
+## Setup
+
+```ts
+import { cva, type VariantProps } from 'class-variance-authority';
+import { twMerge } from 'tailwind-merge';
+
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
+```
+
+## Variant Definition
+
+```ts
+export const buttonVariants = cva(
+  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-brand-500 text-white hover:bg-brand-600',
+        secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200',
+        ghost: 'hover:bg-gray-100',
+      },
+      size: {
+        sm: 'h-8 px-3 text-sm',
+        md: 'h-10 px-4 text-base',
+        lg: 'h-12 px-6 text-lg',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+    },
+  }
+);
+```
+
+## Compound Variants
+
+```ts
+compoundVariants: [
+  {
+    variant: 'primary',
+    size: 'lg',
+    class: 'shadow-lg',
+  },
+]
+```
+
+## Best Practices
+
+- Keep base classes in `cva` base string
+- Use `cn()` to merge user classes safely
+- Avoid conditional Tailwind classes outside CVA
+- Export `VariantProps` for type safety
+- Compose variants, don't duplicate

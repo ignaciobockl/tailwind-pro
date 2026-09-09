@@ -1,0 +1,40 @@
+metrics:
+  theme_tokens_coverage:
+    description: "Percentage of components using design tokens"
+    target: "> 90%"
+    measurement: "components using var(--color-*) / total components"
+
+  cva_adoption:
+    description: "Components using CVA patterns"
+    target: "> 80%"
+    measurement: "CVA components / total components"
+
+  dark_mode_flash:
+    description: "Time to first paint without FOUC"
+    target: "< 100ms"
+    measurement: "Lighthouse TBT metric"
+
+  bundle_size_css:
+    description: "Production CSS bundle size"
+    target: "< 30KB"
+    measurement: "gzip size of final CSS"
+
+  container_query_usage:
+    description: "Components using container queries"
+    target: "> 60%"
+    measurement: "components with @container / total layout components"
+
+  fluid_typography_coverage:
+    description: "Headings using fluid type"
+    target: "> 75%"
+    measurement: "headings with clamp / total headings"
+
+  a11y_score:
+    description: "Lighthouse accessibility score"
+    target: "> 95%"
+    measurement: "Lighthouse accessibility audit"
+
+  performance_score:
+    description: "Lighthouse performance score"
+    target: "> 90%"
+    measurement: "Lighthouse performance audit"

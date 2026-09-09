@@ -1,0 +1,66 @@
+# A11y: Focus, Motion, Touch
+
+## Focus Visible
+
+Use `focus-visible` for keyboard-only outlines.
+
+```css
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+}
+```
+
+## Reduced Motion
+
+Respect user preference.
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+Use utility:
+```html
+<div class="transition-transform motion-reduce:transition-none">
+```
+
+## Touch Targets
+
+Minimum 44x44px for interactive elements.
+
+```css
+@utility touch-target {
+  min-width: 44px;
+  min-height: 44px;
+}
+```
+
+## Forced Colors
+
+Support high contrast mode.
+
+```css
+@media (forced-colors: active) {
+  .btn {
+    border: 1px solid CanvasText;
+    forced-color-adjust: none;
+  }
+}
+```
+
+## Best Practices
+
+- Never remove focus indicators
+- Use semantic HTML + Tailwind
+- Ensure color contrast AA minimum
+- Provide text alternatives for icons
+- Test with screen readers
+- Avoid motion for decorative elements only
+- Keep interactive areas large on touch devices

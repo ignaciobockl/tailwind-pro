@@ -1,0 +1,13 @@
+/* Safelist examples for dynamic classes */
+@source inline("bg-red-500") "bg-*";
+@source inline("text-sm") "text-*";
+@source inline("grid-cols-1") "grid-cols-*";
+
+/* Brace expansion examples */
+@source inline("opacity-0") "opacity-[0-100]";
+
+/* Dynamic variant safelist */
+@source inline("dark:bg-gray-900") "dark:bg-*";
+
+/* Component-specific safelist */
+@source "./src/components/StatusBadge.tsx" "bg-success-*" "bg-warning-*";

@@ -1,0 +1,49 @@
+# Arbitrary Values and Properties
+
+## Overview
+Use square brackets for one-off values and CSS features.
+
+## Arbitrary Values
+
+```html
+<div class="w-[calc(100%-2rem)] h-[10vh] bg-[#0ea5e9]">
+```
+
+## CSS Variables in Arbitrary
+
+```html
+<div class="w-[var(--size)] bg-[color-mix(in_oklab,var(--color-brand-500)_80%,white)]">
+```
+
+## Properties
+
+Apply any CSS property:
+
+```html
+<div class="[mask-image:linear-gradient(to_bottom,black,transparent)] [backdrop-filter:blur(12px)]">
+```
+
+## color-mix
+
+Create tints/shades without extra tokens:
+
+```html
+<div class="bg-[color-mix(in_oklab,var(--color-brand-500)_20%,transparent)]">
+```
+
+## :has() Support
+
+Use relational selectors:
+
+```html
+<div class="has-[[data-active]]:bg-brand-100">
+```
+
+## Best Practices
+
+- Prefer tokens for repeated values
+- Use arbitrary values for prototyping
+- Escape special characters correctly
+- Avoid overusing arbitrary values for bundle size
+- Combine with @utility for reuse
+- Test browser support for `color-mix` and `:has()`

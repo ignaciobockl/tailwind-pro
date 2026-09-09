@@ -1,0 +1,47 @@
+# Fluid Typography with clamp()
+
+## Overview
+Create responsive type scales that scale smoothly between breakpoints.
+
+## CSS Variables
+
+```css
+@theme {
+  --font-size-fluid-sm: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
+  --font-size-fluid-lg: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  --line-height-fluid: clamp(1.5, 1.4 + 0.2vw, 1.75);
+}
+```
+
+## @utility Definition
+
+```css
+@utility text-fluid {
+  font-size: clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+  line-height: var(--line-height-fluid);
+}
+```
+
+## Component Usage
+
+```html
+<h1 class="text-fluid font-semibold tracking-tight">Responsive Heading</h1>
+```
+
+## Calculation Formula
+
+```
+clamp(min, preferred, max)
+preferred = min + (max - min) * ((100vw - minViewport) / (maxViewport - minViewport))
+```
+
+Example: `clamp(1rem, 0.9rem + 0.6vw, 1.5rem)`
+
+## Best Practices
+
+- Set min/max to prevent extremes
+- Keep line-height fluid
+- Use CSS variables for consistency
+- Test at 320px, 768px, 1440px
+- Pair with container queries for component-level fluidity
+- Avoid too many steps; 3-5 sizes suffice

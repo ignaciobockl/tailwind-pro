@@ -1,0 +1,66 @@
+# Custom Utilities and Variants
+
+## Overview
+Extend Tailwind CSS v4 with `@utility` and `@custom-variant`.
+
+## @utility
+
+Create reusable utilities.
+
+```css
+@utility aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+@utility prose {
+  max-width: 65ch;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+```
+
+Accept parameters:
+```css
+@utility p- {
+  padding: calc(var(--spacing) * <value>);
+}
+```
+
+## @custom-variant
+
+Define custom variants.
+
+```css
+@custom-variant hover {
+  @media (hover: hover) {
+    &:hover { @slot }
+  }
+}
+
+@custom-variant dark {
+  .dark & { @slot }
+}
+```
+
+## Examples
+
+```css
+@custom-variant prefers-contrast {
+  @media (prefers-contrast: more) {
+    @slot
+  }
+}
+
+@utility underline-offset-4 {
+  text-underline-offset: 4px;
+}
+```
+
+## Best Practices
+
+- Keep utilities single responsibility
+- Name utilities semantically
+- Avoid duplicating core utilities
+- Document custom variants usage
+- Test variants in all states
+- Use CSS variables for theming

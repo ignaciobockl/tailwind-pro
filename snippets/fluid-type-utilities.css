@@ -1,0 +1,28 @@
+/* Fluid typography utilities */
+@theme {
+  --font-size-fluid-sm: clamp(0.875rem, 0.8rem + 0.5vw, 1rem);
+  --font-size-fluid-base: clamp(1rem, 0.9rem + 0.6vw, 1.125rem);
+  --font-size-fluid-lg: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  --font-size-fluid-xl: clamp(1.875rem, 1.5rem + 2vw, 3rem);
+  --line-height-fluid: clamp(1.5, 1.4 + 0.2vw, 1.75);
+}
+
+@utility text-fluid-sm {
+  font-size: var(--font-size-fluid-sm);
+  line-height: var(--line-height-fluid);
+}
+
+@utility text-fluid-base {
+  font-size: var(--font-size-fluid-base);
+  line-height: var(--line-height-fluid);
+}
+
+@utility text-fluid-lg {
+  font-size: var(--font-size-fluid-lg);
+  line-height: var(--line-height-fluid);
+}
+
+@utility text-fluid-xl {
+  font-size: var(--font-size-fluid-xl);
+  line-height: var(--line-height-fluid);
+}

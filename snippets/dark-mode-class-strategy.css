@@ -1,0 +1,32 @@
+/* Dark mode class strategy with 3-way support */
+@theme {
+  --color-bg: oklch(1 0 0);
+  --color-text: oklch(0.15 0 0);
+  --color-muted: oklch(0.5 0 0);
+}
+
+.dark {
+  --color-bg: oklch(0.12 0 0);
+  --color-text: oklch(0.95 0 0);
+  --color-muted: oklch(0.6 0 0);
+}
+
+:root {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* System preference fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    --color-bg: oklch(0.12 0 0);
+    --color-text: oklch(0.95 0 0);
+  }
+}
+
+/* Utility for theme toggle */
+.theme-toggle {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+}

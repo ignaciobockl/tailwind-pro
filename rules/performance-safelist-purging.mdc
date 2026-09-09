@@ -1,0 +1,55 @@
+# Performance, Safelist, Purging
+
+## Overview
+Tailwind CSS v4 uses `@source` for content scanning and safelisting for dynamic classes.
+
+## @source Configuration
+
+```css
+@source "./src/**/*.{html,js,ts,jsx,tsx}";
+@source "./components/**/*.md";
+```
+
+## Safelist Patterns
+
+```css
+@tailwind utilities;
+
+/* Safelist dynamic variants */
+@source inline("bg-[red-500]") "bg-*";
+@source inline("text-size-[*]") "text-*";
+```
+
+Or in config:
+```css
+@utility safelist {
+  /* classes */
+}
+```
+
+## Critical CSS
+
+Extract above-the-fold styles:
+
+```css
+@layer critical {
+  .hero { /* styles */ }
+}
+```
+
+## Best Practices
+
+- Limit `@source` globs to actual content
+- Use inline safelist for generated classes
+- Avoid `*` safelists; be specific
+- Purge unused CSS in production
+- Measure bundle size with `tailwindcss --stats`
+- Use `content-visibility` for offscreen sections
+- Defer non-critical utilities
+
+## Bundle Optimization
+
+- Prefer utilities over custom CSS when possible
+- Reuse component classes via CVA
+- Avoid arbitrary values in loops
+- Tree-shake unused variants

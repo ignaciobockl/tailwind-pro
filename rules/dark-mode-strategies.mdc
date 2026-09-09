@@ -1,0 +1,59 @@
+# Dark Mode Strategies
+
+## Overview
+Tailwind CSS v4 supports class-based dark mode with zero flash.
+
+## 3-Way Strategy
+
+Support light, dark, and system preference.
+
+```html
+<html class="light">
+```
+
+```css
+@variant dark {
+  @media (prefers-color-scheme: dark) { @slot }
+}
+```
+
+## Implementation Steps
+
+1. Set initial class via script before paint
+```html
+<script>
+  const theme = localStorage.getItem('theme') || 'system';
+  if (theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  }
+</script>
+```
+
+2. Toggle class on user interaction
+```ts
+function setTheme(mode: 'light' | 'dark' | 'system') {
+  localStorage.setItem('theme', mode);
+  document.documentElement.classList.toggle('dark', mode === 'dark' || (mode === 'system' && matchMedia('(prefers-color-scheme: dark)').matches));
+}
+```
+
+3. Define tokens for both modes
+```css
+@theme {
+  --color-bg: oklch(1 0 0);
+  --color-text: oklch(0.15 0 0);
+}
+
+.dark {
+  --color-bg: oklch(0.15 0 0);
+  --color-text: oklch(0.95 0 0);
+}
+```
+
+## Best Practices
+
+- Use class strategy, not media only
+- Apply theme script in `<head>` to prevent FOUC
+- Respect `prefers-color-scheme` for system
+- Use semantic tokens, not `dark:` utilities everywhere
+- Test with forced-colors and high contrast
