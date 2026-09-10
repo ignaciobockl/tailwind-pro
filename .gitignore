@@ -1,0 +1,11 @@
+# Benchmark harness (not part of the skill)
+benchmark/
+
+# Local planning artifacts
+.plan/
+
+# Session artifacts
+preview.err
+preview.out
+preview.log
+chromewebdata_*.report.html

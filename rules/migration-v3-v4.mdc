@@ -1,0 +1,48 @@
+---
+description: Tailwind v3 to v4 migration guide with breaking changes table and equivalences.
+---
+
+# Migration v3 → v4
+
+## Breaking Changes
+
+| v3 | v4 | Notes |
+|----|----|-------|
+| `tailwind.config.js` with `theme.extend.colors` | `@theme { --color-* }` | Map `theme.extend.colors` → `--color-*`, `theme.extend.spacing` → `--spacing-*`, etc. |
+| `@tailwind base` / `@tailwind components` / `@tailwind utilities` | `@import "tailwindcss"` | Single import replaces directives. |
+| `darkMode: 'class'` | `@custom-variant dark (&:where(.dark, .dark *));` | Class strategy with custom variant. |
+| `safelist: [...]` in config | `@source inline("...")` in CSS | Inline safelisting for dynamic classes. |
+| `shadow-sm` | `shadow-xs` | Scale changed: `shadow-2xs`, `shadow-xs`, `shadow-sm`, `shadow-md`... |
+| `flex-shrink-*` | `shrink-*` | Shorter utilities. |
+| `flex-grow-*` | `grow-*` | Shorter utilities. |
+| `outline-none` | `outline-hidden` | New semantic name. |
+| `ring` (default) | `ring-1` / `ring-3` | Ring defaults changed. |
+| `bg-opacity-*` | `bg-black/50` | Use opacity modifier. |
+| `text-opacity-*` | `text-black/50` | Use `/` modifier. |
+| `blur` | `blur-sm` | Scale adjusted. |
+| `rounded-sm` | `rounded-xs` | Radius scale shifted. |
+| `shadow` | `shadow-sm` | Default shadow renamed. |
+| `theme()` function | `var(--*)` | Use CSS variables. |
+
+## Behavior Notes
+
+- `@layer components` + `@apply` continues to work.
+- `@utility` does **not** use `@apply`; declare CSS directly.
+- `--breakpoint-*` for viewport media queries; `--container-*` for `@container` queries.
+- New capabilities: `@theme inline`, `@reference`, `@theme static`.
+
+## Examples
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: oklch(0.65 0.18 250);
+  --spacing: 0.25rem;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+@source inline("{hover:,}bg-red-{50,100..900..100,950}");
+```
+
+Prefer verified renames from https://tailwindcss.com/docs/upgrade-guide; mark uncertain items as "verify".
