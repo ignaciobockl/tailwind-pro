@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.astro/
+coverage/
+
+# Benchmark harness (not part of the skill)
+benchmark/
+
+# Local planning artifacts
+.plan/
+
+# Session artifacts
+preview.err
+preview.out
+preview.log
+chromewebdata_*.report.html
+
+# Environment
+.env
+.env.*
+
+# Logs and temp
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# System
+server.pid

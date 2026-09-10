@@ -1,13 +1,21 @@
-/* Safelist examples for dynamic classes */
-@source inline("bg-red-500") "bg-*";
-@source inline("text-sm") "text-*";
-@source inline("grid-cols-1") "grid-cols-*";
+/* Safelist examples for dynamic classes — Tailwind CSS v4 @source inline */
+/* Broad patterns are acceptable only for closed, audited sets; avoid '*' in general scans. */
 
-/* Brace expansion examples */
-@source inline("opacity-0") "opacity-[0-100]";
+/* Simple safelist */
+@source inline("underline");
 
-/* Dynamic variant safelist */
-@source inline("dark:bg-gray-900") "dark:bg-*";
+/* Safelist with variants */
+@source inline("{hover:,focus:,}underline");
 
-/* Component-specific safelist */
-@source "./src/components/StatusBadge.tsx" "bg-success-*" "bg-warning-*";
+/* Brace expansion of color ... */
+@source inline("{hover:,}bg-red-{50,100..900..100,950}");
+
+/* Exclusion */
+/* @source not se usa con rutas, no con inline() — para excluir clases específicas simplemente no se safelistean */
+@source not "../src/components/legacy";
+
+/* Component-specific source with explicit classes */
+@source "./src/components/StatusBadge.tsx";
+/* For StatusBadge, safelist the exact variants used: */
+@source inline("bg-success-{500,600}");
+@source inline("bg-warning-{500,600}");
