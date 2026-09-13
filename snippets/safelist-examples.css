@@ -11,7 +11,7 @@
 @source inline("{hover:,}bg-red-{50,100..900..100,950}");
 
 /* Exclusion */
-/* @source not se usa con rutas, no con inline() — para excluir clases específicas simplemente no se safelistean */
+/* @source not is used with paths, not with inline() — to exclude specific classes simply do not safelist them */
 @source not "../src/components/legacy";
 
 /* Component-specific source with explicit classes */
