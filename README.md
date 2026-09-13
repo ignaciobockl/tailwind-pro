@@ -33,11 +33,11 @@ tailwind-pro/
 ├─ CODE_OF_CONDUCT.md
 ├─ CONTRIBUTING.md
 ├─ .github/workflows/ci.yml
-├─ rules/          # 9 .mdc rules
+├─ rules/          # 10 .mdc rules
 ├─ snippets/       # 6 reusable snippets
 ├─ test-cases/
-│  ├─ trigger/     # 10 should-activate cases
-│  └─ non-trigger/ # 10 should-not-activate cases
+│  ├─ trigger/     # 25 should-activate cases
+│  └─ non-trigger/ # 25 should-not-activate cases
 └─ eval/
    ├─ qualitative-rubric.md
    └─ quantitative-metrics.yaml
