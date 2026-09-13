@@ -28,7 +28,7 @@ Support light, dark, and system preference.
   }
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
   mq.addEventListener('change', () => {
-    // Re-evalúa matchMedia directamente cuando el tema es system
+    // Re-evaluate matchMedia directly when theme is system
     if (localStorage.getItem('theme') === 'system') {
       const isDark = mq.matches;
       document.documentElement.classList.toggle('dark', isDark);
@@ -65,4 +65,4 @@ function setTheme(mode: 'light' | 'dark' | 'system') {
 - Respect `prefers-color-scheme` for system
 - Use semantic tokens, not `dark:` utilities everywhere
 - Test with forced-colors and high contrast
-- Para modo `system`, la variante `@custom-variant dark` debe combinarse con `prefers-color-scheme` cuando no haya clase explícita de `.light`/`.dark`.
+- For `system` mode, the `@custom-variant dark` variant should be combined with `prefers-color-scheme` when there is no explicit `.light`/`.dark` class.

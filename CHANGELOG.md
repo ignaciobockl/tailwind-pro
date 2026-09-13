@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial skill structure for Tailwind CSS v4+ enterprise patterns
-- 9 rules covering design tokens, CVA, dark mode, container queries, fluid typography, performance, a11y, utilities, arbitrary values
+- 10 rules covering design tokens, CVA, dark mode, container queries, fluid typography, performance, a11y, utilities, arbitrary values
 - 6 reusable snippets for tokens, dark mode, CVA button, container card, fluid type, safelist
-- Test cases: 10 trigger and 10 non-trigger scenarios
+- Test cases: 25 trigger and 25 non-trigger scenarios
 - Evaluation assets: qualitative rubric and quantitative metrics
 - CI workflow with markdown lint and validation
 - Project documentation: README, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY
