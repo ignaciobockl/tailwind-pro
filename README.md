@@ -25,7 +25,6 @@ This skill provides reusable rules, snippets, and test cases for building produc
 
 ```
 tailwind-pro/
-├─ SKILL.md
 ├─ README.md
 ├─ LICENSE.md
 ├─ CHANGELOG.md
@@ -33,29 +32,32 @@ tailwind-pro/
 ├─ CODE_OF_CONDUCT.md
 ├─ CONTRIBUTING.md
 ├─ .github/workflows/ci.yml
-├─ rules/          # 10 .mdc rules
-├─ snippets/       # 6 reusable snippets
-├─ test-cases/
-│  ├─ trigger/     # 25 should-activate cases
-│  └─ non-trigger/ # 25 should-not-activate cases
-└─ eval/
-   ├─ qualitative-rubric.md
-   └─ quantitative-metrics.yaml
+└─ skills/
+   └─ tailwind-pro/
+      ├─ SKILL.md
+      ├─ rules/          # 10 .mdc rules
+      ├─ snippets/       # 6 reusable snippets
+      ├─ test-cases/
+      │  ├─ trigger/     # 25 should-activate cases
+      │  └─ non-trigger/ # 25 should-not-activate cases
+      └─ eval/
+         ├─ qualitative-rubric.md
+         └─ quantitative-metrics.yaml
 ```
 
 ## Quick start
 
-1. Read `SKILL.md` for overview.
-2. Apply rules from `rules/`.
-3. Copy snippets from `snippets/` as starting points.
-4. Validate with `test-cases/` and `eval/`.
+1. Read `skills/tailwind-pro/SKILL.md` for overview.
+2. Apply rules from `skills/tailwind-pro/rules/`.
+3. Copy snippets from `skills/tailwind-pro/snippets/` as starting points.
+4. Validate with `skills/tailwind-pro/test-cases/` and `skills/tailwind-pro/eval/`.
 
 ## Examples
 
-- Design tokens: `rules/theme-tokens-design-system.mdc`
-- CVA button: `snippets/cva-button.ts`
-- Dark mode: `rules/dark-mode-strategies.mdc`
-- Container query card: `snippets/container-query-card.css`
+- Design tokens: `skills/tailwind-pro/rules/theme-tokens-design-system.mdc`
+- CVA button: `skills/tailwind-pro/snippets/cva-button.ts`
+- Dark mode: `skills/tailwind-pro/rules/dark-mode-strategies.mdc`
+- Container query card: `skills/tailwind-pro/snippets/container-query-card.css`
 
 ## Contributing
 
