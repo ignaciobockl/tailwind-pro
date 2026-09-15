@@ -1,7 +1,7 @@
 # tailwind-pro
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.2-blue.svg)](CHANGELOG.md)
 [![Contributing](https://img.shields.io/badge/contributing-welcome-green.svg)](CONTRIBUTING.md)
 [![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-enforced-lightgrey.svg)](CODE_OF_CONDUCT.md)
 
@@ -51,6 +51,11 @@ tailwind-pro/
 2. Apply rules from `skills/tailwind-pro/rules/`.
 3. Copy snippets from `skills/tailwind-pro/snippets/` as starting points.
 4. Validate with `skills/tailwind-pro/test-cases/` and `skills/tailwind-pro/eval/`.
+
+**SKILL.md new sections:**
+- `When to use` — explicit scenarios for this skill
+- `Example` — minimal @theme + CVA/tailwind-merge button
+- `Badges` — version, license, CI status
 
 ## Examples
 
