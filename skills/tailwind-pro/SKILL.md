@@ -1,6 +1,6 @@
 ---
 name: tailwind-pro
-description: Tailwind CSS v4+ design system patterns: @theme and OKLCH tokens, CVA + tailwind-merge, @utility and @custom-variant, @apply in @layer components, dark mode class strategies (incl. data-theme), @container queries, fluid clamp typography and spacing, arbitrary values and properties (color-mix, :has), @source and safelist performance, @keyframes and reduced-motion a11y, and v3-to-v4 migration. Use @reference for CSS Modules; not for Tailwind v1/v2, Bootstrap, Sass, or CSS-in-JS.
+description: "Tailwind CSS v4+ design system patterns: @theme and OKLCH tokens, CVA + tailwind-merge, @utility and @custom-variant, @apply in @layer components, dark mode class strategies (incl. data-theme), @container queries, fluid clamp typography and spacing, arbitrary values and properties (color-mix, :has), @source and safelist performance, @keyframes and reduced-motion a11y, and v3-to-v4 migration. Use @reference for CSS Modules; not for Tailwind v1/v2, Bootstrap, Sass, or CSS-in-JS."
 license: MIT
 ---
 
